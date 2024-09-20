@@ -1,4 +1,4 @@
-package tacos;
+package tacos.web;
 
 import static org.hamcrest.Matchers.containsString;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.test.web.servlet.MockMvc;
 
-@WebMvcTest(HomeController.class)
+@WebMvcTest(WebConfig.class)
 class HomeControllerTest {
 
     @Autowired
