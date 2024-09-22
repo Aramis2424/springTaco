@@ -1,11 +1,12 @@
 package tacos;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Table;
 
 @Data
-@Table
+@Entity
 public class IngredientRef {
+    @Id
     private final String ingredient;
 }
