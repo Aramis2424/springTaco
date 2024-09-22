@@ -6,9 +6,13 @@ import lombok.Data;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 
 @Data
+@Table
 public class Taco {
+    @Id
     private Long id;
     private Date createdAt = new Date();
     @NotNull
