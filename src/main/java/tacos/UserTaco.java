@@ -1,5 +1,6 @@
 package tacos;
 
+import java.io.Serial;
 import java.util.Arrays;
 import java.util.Collection;
 import jakarta.persistence.Entity;
@@ -18,7 +19,8 @@ import lombok.RequiredArgsConstructor;
 @Data
 @NoArgsConstructor(access=AccessLevel.PRIVATE, force=true)
 @RequiredArgsConstructor
-public class User implements UserDetails {
+public class UserTaco implements UserDetails {
+    @Serial
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
