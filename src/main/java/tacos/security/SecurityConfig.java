@@ -3,6 +3,7 @@ package tacos.security;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -41,6 +42,12 @@ public class SecurityConfig {
                 .loginPage("/login")
                 .permitAll()
                 .defaultSuccessUrl("/design")
+        );
+        http.csrf((csrf) ->
+                csrf.ignoringRequestMatchers("/h2-console/**")
+        );
+        http.headers((headers) ->
+                headers.frameOptions((HeadersConfigurer.FrameOptionsConfig::sameOrigin))
         );
         return http.build();
     }
