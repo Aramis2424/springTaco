@@ -37,7 +37,8 @@ public class DataLoader implements CommandLineRunner {
         repoIngr.save(new Ingredient("SLSA", "Salsa", Type.SAUCE));
         repoIngr.save(new Ingredient("SRCR", "Sour Cream", Type.SAUCE));
 
-        repoUser.save(new RegistrationForm("qwer", "1234", "RomanBolvan", "dinDon",
-                "qaz", "qw", "123", "3258362694").toUser(encoder));
+        if (repoUser.findByUsername("qwer") == null)
+            repoUser.save(new RegistrationForm("qwer", "1234", "RomanBolvan", "dinDon",
+                    "qaz", "qw", "123", "3258362694").toUser(encoder));
     }
 }

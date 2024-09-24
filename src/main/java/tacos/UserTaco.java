@@ -3,6 +3,8 @@ package tacos;
 import java.io.Serial;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -35,7 +37,7 @@ public class UserTaco implements UserDetails {
     private final String phoneNumber;
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Arrays.asList(new SimpleGrantedAuthority("ROLE_USER"));
+        return List.of(new SimpleGrantedAuthority("ROLE_USER"));
     }
     @Override
     public boolean isAccountNonExpired() {
