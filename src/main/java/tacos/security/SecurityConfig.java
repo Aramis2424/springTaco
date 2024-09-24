@@ -44,7 +44,7 @@ public class SecurityConfig {
                 .defaultSuccessUrl("/design")
         );
         http.csrf((csrf) ->
-                csrf.ignoringRequestMatchers("/h2-console/**")
+                csrf.ignoringRequestMatchers("/h2-console/**", "/api/**")
         );
         http.headers((headers) ->
                 headers.frameOptions((HeadersConfigurer.FrameOptionsConfig::sameOrigin))
