@@ -11,7 +11,7 @@
 //import tacos.Ingredient;
 //
 //@Repository
-//public class JdbcIngredientRepository implements IngredientRepository {
+//public class JdbcIngredientRepository implements IngredientController {
 //    private JdbcTemplate jdbcTemplate;
 //    @Autowired
 //    public JdbcIngredientRepository(JdbcTemplate jdbcTemplate) {
